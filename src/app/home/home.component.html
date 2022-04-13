@@ -1,0 +1,14 @@
+<div class="nav_panel">
+    <h1>Bill Tracker</h1>
+    <p>Managed all your bills in one place</p>
+</div>
+
+<div class="content">
+    <div [hidden]="login" class="formContainer">
+        <app-form></app-form>
+    </div>
+</div>
+
+<div [hidden]="!login">
+    <app-dashboard></app-dashboard>
+</div>

@@ -1,0 +1,30 @@
+<div>
+    <form [formGroup]="form" autocomplete="off">
+        <h1>Please Login or Register</h1>
+        <div class="formField">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" formControlName="username" required
+                [ngClass]="{ 'isInvalid': form.get('username').touched && form.get('username').invalid }">
+
+            <span class="errorMsg" *ngIf="(form.get('username').touched && form.get('username').invalid)">Username can't
+                be blank</span>
+        </div>
+
+        <div class="formField">
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" formControlName="pass" required
+                [ngClass]="{ 'isInvalid': form.get('pass').touched && form.get('pass').invalid }">
+
+            <span class="errorMsg" *ngIf="(form.get('pass').touched && form.get('pass').invalid)">Password
+                can't
+                be blank</span>
+        </div>
+
+        <div class="btn_container">
+            <button [ngClass]="{'btnInvalid': form.invalid, 'regisBtn': form.valid}"
+                (click)="onRegister(form)">Register</button>
+            <button [ngClass]="{'btnInvalid': form.invalid, 'loginBtn': form.valid}"
+                (click)="onLogin(form)">Login</button>
+        </div>
+    </form>
+</div>

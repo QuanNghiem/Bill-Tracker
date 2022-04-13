@@ -1,0 +1,50 @@
+<div>
+    <form [formGroup]="form" autocomplete="off">
+        <div class="formField">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" formControlName="name" required
+                [ngClass]="{ 'isInvalid': form.get('name').touched && form.get('name').invalid }">
+
+            <span class="errorMsg" *ngIf="(form.get('name').touched && form.get('name').invalid)">Name can't
+                be empty</span>
+        </div>
+
+        <div class="formField">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" formControlName="amount" required
+                [ngClass]="{ 'isInvalid': form.get('amount').touched && form.get('amount').invalid }">
+
+            <span class="errorMsg" *ngIf="(form.get('amount').touched && form.get('amount').invalid)">Amount can't
+                be zero</span>
+        </div>
+
+        <div class="formField">
+            <label for="type">Type:</label>
+
+            <select id="type" name="type" formControlName="type"
+                [ngClass]="{ 'isInvalid': form.get('type').touched && form.get('type').invalid }">
+                <option value="grocery">Grocery</option>
+                <option value="food">Food</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="subscription">Subscription</option>
+            </select>
+
+            <span class="errorMsg" *ngIf="(form.get('type').touched && form.get('type').invalid)">Type can't be
+                empty</span>
+        </div>
+
+        <div class="formField">
+            <label for="transactDate">Transaction Date:</label>
+            <input type="date" id="transactDate" name="transactDate" formControlName="transactDate" required
+                [ngClass]="{ 'isInvalid': form.get('transactDate').touched && form.get('transactDate').invalid }">
+
+            <span class="errorMsg" *ngIf="(form.get('transactDate').touched && form.get('transactDate').invalid)">Date
+                can't
+                be empty</span>
+        </div>
+
+        <div class="btn_container">
+            <button [ngClass]="{'btnInvalid': form.invalid, 'loginBtn': form.valid}" (click)="onAdd(form)">Add</button>
+        </div>
+    </form>
+</div>

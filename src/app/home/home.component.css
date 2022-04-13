@@ -1,0 +1,42 @@
+.nav_panel {
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+    align-items: baseline;
+    justify-content: center;
+    background-color: #282c34;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    height: 10vh;
+}
+
+/* .content>*:not(#formArea) {
+    background-color: #282c34;
+    opacity: 70%;
+} */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.formContainer {
+    width: 20%;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.2rem;
+    color: #61dafb;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #DCDCDC;
+}

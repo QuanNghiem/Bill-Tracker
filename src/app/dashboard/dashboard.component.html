@@ -1,0 +1,45 @@
+<div *ngIf="currentList" class="items_container">
+    <!-- <div *ngFor="let header of currentHeader">
+            <div *ngIf="header !== 'transactDate' && header !== 'type'" class="item_column">
+                <p *ngFor="let i of currentList">
+                    {{i[header]}}
+                </p>
+            </div>
+
+            <div *ngIf="header === 'type'" class="item_column">
+                <p *ngFor="let i of currentList">
+                    {{i[header] | titlecase}}
+                </p>
+            </div>
+
+            <div *ngIf="header === 'transactDate'" class="item_column">
+                <p *ngFor="let i of currentList">
+                    {{i[header] | date:'MMMM d, y'}}
+                </p>
+            </div>
+        </div> -->
+
+    <table>
+        <tr>
+            <th *ngFor="let header of currentHeader">
+                {{header | titlecase}}
+            </th>
+        </tr>
+        <tr *ngFor="let i of currentList">
+            <td *ngFor="let header of currentHeader">
+                <ng-container *ngIf="header === 'amount' ">
+                    {{i[header]}}
+                </ng-container>
+                <ng-container *ngIf="header === 'type' || header === 'name'">
+                    {{i[header] | titlecase}}
+                </ng-container>
+                <ng-container *ngIf="header === 'transactDate'">
+                    {{i[header] | date:'MMMM d, y'}}
+                </ng-container>
+            </td>
+        </tr>
+    </table>
+    <div class="purchaseFormContainer">
+        <app-purchaseform></app-purchaseform>
+    </div>
+</div>
