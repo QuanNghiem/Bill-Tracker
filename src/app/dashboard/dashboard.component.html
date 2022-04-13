@@ -20,7 +20,7 @@
         </tr>
     </table>
 
-    <div class="item_container">
+    <div *ngIf="!currentList.length" class="item_container">
         <h1>You don't have any transactions in our records!</h1>
     </div>
 
