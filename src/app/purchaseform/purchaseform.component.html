@@ -35,7 +35,7 @@
 
         <div class="formField">
             <label for="transactDate">Transaction Date:</label>
-            <input type="date" id="transactDate" name="transactDate" formControlName="transactDate" required
+            <input type="date-local" id="transactDate" name="transactDate" formControlName="transactDate" required
                 [ngClass]="{ 'isInvalid': form.get('transactDate').touched && form.get('transactDate').invalid }">
 
             <span class="errorMsg" *ngIf="(form.get('transactDate').touched && form.get('transactDate').invalid)">Date
